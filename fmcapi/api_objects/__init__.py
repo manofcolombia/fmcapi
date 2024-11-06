@@ -110,6 +110,7 @@ from .policy_services.ravpns import RAVpn
 from .policy_services import ConnectionProfiles
 from .policy_services import DynamicAccessPolicies
 from .object_services import TimeRanges
+from .device_services import BGP
 
 logging.debug("In the api_objects __init__.py file.")
 
@@ -218,4 +219,5 @@ __all__ = [
     "ConnectionProfiles",
     "DynamicAccessPolicies",
     "TimeRanges",
+    "BGP",
 ]
