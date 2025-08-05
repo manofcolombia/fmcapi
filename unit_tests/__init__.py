@@ -80,6 +80,13 @@ from .dynamicaccesspolicies import test__dynamicaccesspolicies
 from .timeranges import test__timeranges
 from .fqdns import test__fqdns
 from .bgp import test__bgp
+from .tunnelstatuses import test__tunnelstatuses
+from .tunneldetails import test__tunneldetails
+from .tunnelsummaries import test__tunnelsummaries
+from .metrics import test__metrics
+from .alerts import test__alerts
+from .events import test__events
+from .operational import test__acp_clone
 
 logging.debug("In the unit-tests __init__.py file.")
 
@@ -164,4 +171,11 @@ __all__ = [
     "test__timeranges",
     "test__fqdns",
     "test__bgp",
+    "test__tunnelstatuses",
+    "test__tunneldetails",
+    "test__tunnelsummaries",
+    "test__metrics",
+    "test__alerts",
+    "test__events",
+    "test__acp_clone"
 ]
