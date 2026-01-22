@@ -1,7 +1,9 @@
 """Super class(es) that is inherited by all API objects."""
 from .helper_functions import syntax_correcter, bulk_list_splitter, check_uuid
+from packaging.version import Version
 import logging
 import json
+
 
 logging.debug(f"In the {__name__} module.")
 
@@ -53,7 +55,7 @@ class APIClassTemplate(object):
         self.expanded = False
         self.get_filters = {}
         self.URL = f"{self.fmc.configuration_url}{self.URL_SUFFIX}"
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.warning(
                 f"This API feature was released in version {self.FIRST_SUPPORTED_FMC_VERSION}.  "
                 f"Your FMC version is {self.fmc.serverVersion}.  Upgrade to use this feature."
