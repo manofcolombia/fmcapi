@@ -5,6 +5,7 @@ from .accesspolicies import AccessPolicies
 from .accessrules import AccessRules
 from fmcapi.api_objects.device_services.devicerecords import DeviceRecords
 from .prefilterpolicies import PreFilterPolicies
+from packaging.version import Version
 import logging
 
 
@@ -269,7 +270,7 @@ class HitCounts(APIClassTemplate):
         logging.debug("In get() for HitCount class.")
         self.parse_kwargs(**kwargs)
 
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support GET of this feature."
             )

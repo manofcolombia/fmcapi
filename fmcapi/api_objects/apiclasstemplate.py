@@ -141,7 +141,7 @@ class APIClassTemplate(object):
         """
         logging.debug("In get() for APIClassTemplate class.")
         self.parse_kwargs(**kwargs)
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support GET of this feature."
             )
@@ -308,7 +308,7 @@ class APIClassTemplate(object):
         """
         logging.debug("In post() for APIClassTemplate class.")
         self.parse_kwargs(**kwargs)
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support POST of this feature."
             )
@@ -385,7 +385,7 @@ class APIClassTemplate(object):
         """
         logging.debug("In put() for APIClassTemplate class.")
         self.parse_kwargs(**kwargs)
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support PUT of this feature."
             )
@@ -449,7 +449,7 @@ class APIClassTemplate(object):
         """
         logging.debug("In delete() for APIClassTemplate class.")
         self.parse_kwargs(**kwargs)
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support DELETE of this feature."
             )
@@ -527,7 +527,7 @@ class APIClassTemplate(object):
         """
         logging.debug("In bulk_delete() for APIClassTemplate class.")
         self.parse_kwargs(**kwargs)
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support bulk DELETE of this feature."
             )
@@ -566,7 +566,7 @@ class APIClassTemplate(object):
         """
         logging.debug("In bulk_post() for APIClassTemplate class.")
         self.parse_kwargs(**kwargs)
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support bulk POST of this feature."
             )

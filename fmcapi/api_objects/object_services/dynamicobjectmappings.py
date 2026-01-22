@@ -1,4 +1,5 @@
 from fmcapi.api_objects.apiclasstemplate import APIClassTemplate
+from packaging.version import Version
 from .dynamicobjects import DynamicObject
 import logging
 
@@ -94,7 +95,7 @@ class DynamicObjectMappings(APIClassTemplate):
         """
         logging.debug("In get() for APIClassTemplate class.")
         self.parse_kwargs(**kwargs)
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support GET of this feature."
             )
