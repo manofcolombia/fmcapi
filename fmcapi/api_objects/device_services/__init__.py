@@ -10,7 +10,6 @@ from .physicalinterfaces import PhysicalInterfaces
 from .redundantinterfaces import RedundantInterfaces
 from .staticroutes import StaticRoutes
 from .subinterfaces import SubInterfaces
-from .bgp import BGP
 
 logging.debug("In the device_services __init__.py file.")
 
@@ -24,5 +23,4 @@ __all__ = [
     "RedundantInterfaces",
     "EtherchannelInterfaces",
     "SubInterfaces",
-    "BGP",
 ]

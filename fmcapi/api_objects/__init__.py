@@ -111,7 +111,6 @@ from .policy_services import ConnectionProfiles
 from .policy_services import DynamicAccessPolicies
 from .policy_services.operational import AccessControlPolicyClone
 from .object_services import TimeRanges
-from .device_services import BGP
 from .health import TunnelStatuses
 from .health import TunnelDetails
 from .health import TunnelSummaries
@@ -226,7 +225,6 @@ __all__ = [
     "ConnectionProfiles",
     "DynamicAccessPolicies",
     "TimeRanges",
-    "BGP",
     "TunnelStatuses",
     "TunnelDetails",
     "TunnelSummaries",

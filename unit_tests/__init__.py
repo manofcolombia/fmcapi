@@ -79,7 +79,6 @@ from .connectionprofiles import test__connectionprofiles
 from .dynamicaccesspolicies import test__dynamicaccesspolicies
 from .timeranges import test__timeranges
 from .fqdns import test__fqdns
-from .bgp import test__bgp
 from .tunnelstatuses import test__tunnelstatuses
 from .tunneldetails import test__tunneldetails
 from .tunnelsummaries import test__tunnelsummaries
@@ -170,7 +169,6 @@ __all__ = [
     "test__dynamicaccesspolicies",
     "test__timeranges",
     "test__fqdns",
-    "test__bgp",
     "test__tunnelstatuses",
     "test__tunneldetails",
     "test__tunnelsummaries",
