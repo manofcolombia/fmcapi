@@ -55,7 +55,7 @@ class APIClassTemplate(object):
         self.expanded = False
         self.get_filters = {}
         self.URL = f"{self.fmc.configuration_url}{self.URL_SUFFIX}"
-        if Version(self.fmc.serverVersion) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.warning(
                 f"This API feature was released in version {self.FIRST_SUPPORTED_FMC_VERSION}.  "
                 f"Your FMC version is {self.fmc.serverVersion}.  Upgrade to use this feature."
