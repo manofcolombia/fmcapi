@@ -64,7 +64,7 @@ def get_networkaddress_type(value):
     logging.debug("In get_networkaddress_type() helper_function.")
     if "/" in value:
         ip, bitmask = value.split("/")
-        if ip == "32" or bitmask == "128":
+        if bitmask == "32" or bitmask == "128":
             return "host"
         else:
             return "network"
