@@ -1,6 +1,7 @@
 """FQDNs Class."""
 
 from fmcapi.api_objects.apiclasstemplate import APIClassTemplate
+from packaging.version import Version
 import logging
 
 
@@ -42,7 +43,7 @@ class FQDNS(APIClassTemplate):
         logging.debug("In __init__() for FQDNS class.")
         self.parse_kwargs(**kwargs)
         self.type = "FQDN"
-        if self.fmc.serverVersion < self.FIRST_SUPPORTED_FMC_VERSION:
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
             logging.warning(
                 f"The FQDNS API feature was released in version {self.FIRST_SUPPORTED_FMC_VERSION}.  "
                 f"Your FMC version is {self.fmc.serverVersion}.  Upgrade to use this feature."
