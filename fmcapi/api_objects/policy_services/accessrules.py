@@ -460,7 +460,7 @@ class AccessRules(APIClassTemplate):
                     )
             else:
                 logging.warning(
-                    'Security Zone, "{name}", not found.  Cannot add to AccessRules.'
+                    f'Security Zone, "{name}", not found.  Cannot add to AccessRules.'
                 )
         elif action == "remove":
             sz = SecurityZones(fmc=self.fmc)
