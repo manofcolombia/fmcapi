@@ -95,7 +95,9 @@ class DynamicObjectMappings(APIClassTemplate):
         """
         logging.debug("In get() for APIClassTemplate class.")
         self.parse_kwargs(**kwargs)
-        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(self.FIRST_SUPPORTED_FMC_VERSION):
+        if Version(self.fmc.serverVersion.split(" ")[0]) < Version(
+            self.FIRST_SUPPORTED_FMC_VERSION
+        ):
             logging.error(
                 f"Your FMC version, {self.fmc.serverVersion} does not support GET of this feature."
             )
