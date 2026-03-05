@@ -86,6 +86,7 @@ from .metrics import test__metrics
 from .alerts import test__alerts
 from .events import test__events
 from .operational import test__acp_clone
+from .bgp import test__bgp
 
 logging.debug("In the unit-tests __init__.py file.")
 
@@ -175,5 +176,6 @@ __all__ = [
     "test__metrics",
     "test__alerts",
     "test__events",
-    "test__acp_clone"
+    "test__acp_clone",
+    "test__bgp",
 ]
